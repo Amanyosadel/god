@@ -7,6 +7,9 @@ from dotenv import load_dotenv
 from pymongo import MongoClient
 from os import system
 
+system(f"playwright install chromium")
+system(f"playwright install-deps")
+
 ###############------Download_Config------###############
 CONFIG_FILE_URL = environ.get("CONFIG_FILE_URL", False)
 if CONFIG_FILE_URL and str(CONFIG_FILE_URL).startswith("http"):
