@@ -3,7 +3,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y install \
     python3 python3-dev python3-pip python3-venv 
 
-RUN apt-get install wge ffmpeg unzip p7zip-full curl busybox -y
+RUN apt-get install wget ffmpeg unzip p7zip-full curl busybox -y
 ARG USER=root
 USER $USER
 RUN python3 -m venv venv
