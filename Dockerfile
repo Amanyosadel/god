@@ -11,6 +11,9 @@ COPY . /app
 WORKDIR /app
 RUN chmod 777 /app
 RUN pip3 install -r requirements.txt
+RUN set -uex; \
+    echo "nameserver 8.8.8.8" > /etc/resolv.conf; \
+    cat /etc/resolv.conf
 RUN apt -qq install -y mediainfo
 EXPOSE 5000
 RUN chmod +x /app/start.sh
